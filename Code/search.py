@@ -66,6 +66,7 @@ def get_scores(task,path,value_network):
 def main():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--num_processes', type=int, default=16)
+	parser.add_argument('--steps', type=float, default=16) #total steps across all processes (in millions)
 	parser.add_argument('--algorithm', type=str, default='Q') # Q or SARSA
 	parser.add_argument('--network', type=str, default='linear') #linear or deep (deep is a CNN for task 3. See Networks.py)
 	parser.add_argument('--reward', type=str, default='discounted') #discounted or average
@@ -73,7 +74,6 @@ def main():
 	parser.add_argument('--lr', type=float, default=0.0001)
 	parser.add_argument('--beta', type=float, default=0.001)
 	parser.add_argument('--df', type=float, default=0.99)
-	parser.add_argument('--steps', type=float, default=20) #total steps across all processes (in millions)
 	args=parser.parse_args()
 
 	EPSILON_MIN=[0.1]*4 + [0.01]*3 + [0.5]*3 #Distribution for the minimum value of epsilon 
