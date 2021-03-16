@@ -7,6 +7,8 @@ For documentation regarding the tasks used in these experiments refer to the fol
  
 ### Usage
 ```python search.py [options]```
+
+For documentation on algorithm parameters refer to [Thesis](https://github.com/Lucas-De/RL-reward-experiments/blob/main/MSc_Thesis.pdf)
  
 |Option|Description|Default|
 | --- | ---| ---|
@@ -14,11 +16,11 @@ For documentation regarding the tasks used in these experiments refer to the fol
 |`--steps`|Total number of steps distributed across all synchronous agents in millions|`16`|
 |`--algorithm` | Algorithm: `Q` (for Q-Learning) or `SARSA` (for SARSA)|`Q`|
 |`--network` | Network specification: `linear` or `deep` (Architecture may depend on task. [Networks.py](https://github.com/Lucas-De/RL-reward-experiments/blob/main/Code/Networks.py)|`linear`|
-|`--reward` | Type of Reward: `discounted` (for descounted returns) or `average` (for average rewards)|`discounted`|
+|`--reward` | Type of Reward: `discounted` for discounted returns or `average` for average rewards |`discounted`|
 |`--task` | The task ID: `1`, `2` or `3`|`1`|
-|`--lr`| Learning Rate (Refer to [Thesis](https://github.com/Lucas-De/RL-reward-experiments/blob/main/MSc_Thesis.pdf))|`0.0001`|
-|`--beta`|Beta: Used to calculate average reward when reward option is `average` (Refer to [Thesis](https://github.com/Lucas-De/RL-reward-experiments/blob/main/MSc_Thesis.pdf))|`0.001`|
-|`--df`|Discount Factor: Used to weight future rewards when reward option is `discounted` (Refer to [Thesis](https://github.com/Lucas-De/RL-reward-experiments/blob/main/MSc_Thesis.pdf))|`0.99`|
+|`--lr`| Learning Rate |`0.0001`|
+|`--beta`|Beta: Used to calculate average reward when reward option is `average`|`0.001`|
+|`--df`|Discount Factor: Used to weight future rewards when reward option is `discounted`|`0.99`|
 
 ### Logging
 The command above will generate logs in the following directory: `./Code/logs/{algorithm}/{reward}/{network}`
