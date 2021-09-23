@@ -20,7 +20,7 @@ For documentation on algorithm parameters refer to [Thesis](https://github.com/L
 |`--num_processes`| Number of asynchronous agents|`16`|
 |`--steps`|Total number of steps distributed across all synchronous agents in millions|`16`|
 |`--algorithm` | Algorithm: `Q` (for Q-Learning) or `SARSA` (for SARSA) or `doubleQ` (for Double Q-Learning)|`Q`|
-|`--network` | Network specification: `linear` or `deep` (Architecture may depend on task. See [Networks.py](https://github.com/Lucas-De/RL-reward-experiments/blob/main/Code/Networks.py) for detailed architecture)|`linear`|
+|`--network` | Network specification: `linear` or `deep` (Architecture may depend on task and the degree parameter. See [Networks.py](https://github.com/pkyriakou/RL-reward-experiments/blob/main/Code/Networks.py) for detailed architecture)|`linear`|
 |`--degree` | Polynomial Degree to expand environment vector `1`, `2` or `3`|`1`|
 |`--reward` | Type of Reward: `discounted` for discounted returns or `average` for average rewards |`discounted`|
 |`--task` | The task ID: `1`, `2` or `3`|`1`|
