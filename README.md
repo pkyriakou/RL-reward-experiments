@@ -4,7 +4,8 @@ For documentation regarding the tasks used in these experiments refer to the fol
 
 This is a fork of Lucas Descause's original repository. It is the codebase used for the experiments of my master's dissartation "Reinforcement Learning with Function Approximation in Continuing Tasks: Discounted Return or Average Reward?"
 
-*Abstract*
+**Abstract**
+
 Reinforcement learning is a machine learning sub-field, involving an agent performing sequential decision making and learning through trial and error inside a predefined environment. An important design decision for a reinforcement learning algorithm is the return formulation, which formulates the future expected returns that the agent receives after following any action in a specific environment state. In continuing tasks with value function approximation (VFA), average rewards and discounted returns can be used as the return formulation but it is unclear how the two formulations compare empirically. This dissertation aims at empirically comparing the two return formulations. We experiment with three continuing tasks of varying complexity, three learning algorithms and four different VFA methods. We conduct three experiments investigating the average performance over multiple hyperparameters, the performance with near-optimal hyperparameters and the hyperparameter sensitivity of each return formulation. Our results show that there is an apparent performance advantage in favour of the average rewards formulation because it is less sensitive to hyperparameters. Once hyperparameters are optimized, the two formulations seem to perform similarly.
 
 ## Training
@@ -20,7 +21,7 @@ For documentation on algorithm parameters refer to [Thesis](https://github.com/L
 |`--steps`|Total number of steps distributed across all synchronous agents in millions|`16`|
 |`--algorithm` | Algorithm: `Q` (for Q-Learning) or `SARSA` (for SARSA) or `doubleQ` (for Double Q-Learning)|`Q`|
 |`--network` | Network specification: `linear` or `deep` (Architecture may depend on task. See [Networks.py](https://github.com/Lucas-De/RL-reward-experiments/blob/main/Code/Networks.py) for detailed architecture)|`linear`|
-|`--degree` | Polynomial Degree to expand environment vector |`1`|
+|`--degree` | Polynomial Degree to expand environment vector `1`, `2` or `3`|`1`|
 |`--reward` | Type of Reward: `discounted` for discounted returns or `average` for average rewards |`discounted`|
 |`--task` | The task ID: `1`, `2` or `3`|`1`|
 |`--lr`| Learning Rate |`0.0001`|
@@ -44,6 +45,7 @@ To do so use `python visualize.py [options]`
 | --- | ---| ---|
 |`--task` | The task ID: `1`, `2` or `3`|`1`|
 |`--network` | Network specification: `linear` or `deep` |`linear`|
+|`--degree` | Polynomial Degree to expand environment vector `1`, `2` or `3`|`1`|
 |`--param` | Network parameters path ||
 
 *Note: Vizalusation uses Matplotlib with Qt5Agg backend. Some issues have been identidied on some platforms*
