@@ -15,11 +15,11 @@ class Linear(nn.Module):  # Class defining a linear model that can also polynomi
 		self.input_size = input_size
 		self.degree = degree
 
-		#  we create a dummy vector of the same shape as the environment observation
+		# we create a dummy vector of the same shape as the environment observation
 		dummy = numpy.random.randint(2, size=(1,self.input_size))
-		#  we raise to a polynomial of the degree chosen
+		# we raise to a polynomial of the degree chosen
 		dummy_poly = PolynomialFeatures(self.degree, include_bias=False)
-		#  we save the size of the augmented environment vector
+		# we save the size of the augmented environment vector
 		size = dummy_poly.fit(dummy).n_output_features_
 		# size = self.input_size*self.degree
 		self.fc = nn.Linear(size, output_size)
